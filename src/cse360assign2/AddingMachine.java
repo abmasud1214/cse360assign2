@@ -11,37 +11,45 @@ public class AddingMachine {
 	private int total;
 
 	/**
+	 * String that keeps track of the history of adding and subtracting
+	 */
+	private String history;
+
+	/**
 	 * Constructor that has no parameters and creates an object with the total at 0 and initializes the history string;
 	 */
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 
 	/**
 	 * Returns the value of the total.
 	 *
-	 * @return 0
+	 * @return total
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 
 	/**
-	 * Adds a value to the total
+	 * Adds a value to the total and updates history
 	 *
 	 * @param value
 	 */
 	public void add (int value) {
-		
+		total += value;
+		history += " + " + value;
 	}
 
 	/**
-	 * Subtracts a value to the total
+	 * Subtracts a value to the total and updates history
 	 *
 	 * @param value
 	 */
 	public void subtract (int value) {
-		
+		total -= value;
+		history += " - " + value;
 	}
 
 	/**
@@ -50,13 +58,14 @@ public class AddingMachine {
 	 * @return
 	 */
 	public String toString () {
-		return "";
+		return history;
 	}
 
 	/**
-	 * Clears the value of the total
+	 * Clears the value of the total and the history
 	 */
 	public void clear() {
-	
+		total = 0;
+		history = "0";
 	}
 }
